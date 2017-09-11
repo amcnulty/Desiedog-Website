@@ -1,0 +1,33 @@
+<div id="signInBox">
+    <div id="popupExitButton">&#x2717;</div>
+    <div id="signInTab" class="tab">Sign In</div>
+    <div id="registerTab" class="tab">Register</div>
+    <div id="signInView" class="tabView visible">
+        <h3 class="popupHeader">Welcome Back To Desiedog.com!</h3>
+        <form>
+            <label class="popupLabel" for="username">Username</label>
+            <p id="signInUsernameError" class="popupInputError">Username not found or invalid</p>
+            <input type="text" id="signInUsername" class="popupInput" name="username" placeholder="username"><br>
+            <label class="popupLabel" for="password">Password</label>
+            <p id="signInPasswordError" class="popupInputError">Password invalid</p>
+            <input type="password" id="signInPassword" class="popupInput" name="password" placeholder="password"><br>
+            <p id="forgotPasswordLink">Forgot Password?</p><br>
+            <input type="button" class="submitButton" id="popupConfirmButton" value="CONFIRM">
+        </form>
+    </div>
+    <div id="regView" class="tabView">
+        <h3 class="popupHeader">Create An Account With Us!</h3>
+        <form>
+            <label class="popupLabel" for="regUsername">Username</label>
+            <p id="regUsernameError" class="popupInputError">Username invalid or unavailable</p>
+            <input type="text" id="regUsername" class="popupInput" name="regUsername" placeholder="username"><br>
+            <label class="popupLabel" for="regPassword">Password</label>
+            <p id="regPasswordError" class="popupInputError">Invalid Password</p>
+            <input type="password" id="regPassword" class="popupInput" name="regPassword" placeholder="password"><br>
+            <label class="popupLabel" for="confirmPassword">Confirm Password</label>
+            <p id="confirmPasswordError" class="popupInputError">Passwords Do Not Match</p>
+            <input type="password" id="confirmPassword" class="popupInput" name="confirmPassword" placeholder="password"><br><br>
+            <input type="button" class="submitButton" id="popupRegButton" value="REGISTER">
+        </form>
+    </div>
+</div>

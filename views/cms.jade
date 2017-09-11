@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        title Desie Dog CMS Portal
+        meta(http-equiv='content-language', content='en')
+        meta(charset="UTF-8")
+        meta(name='author', content='Aaron Michael McNulty')
+        link(rel="stylesheet", type="text/css", href="css/cms/login.css")
+    body
+    #centerContent
+        #welcomeText
+            h1 Welcome to the Desie Dog CMS Portal!
+            h3 Login to start adding content to our site.
+        br
+        #signInBox
+            form
+                label(for="userName") Username
+                br
+                input#userName(type="text", placeholder="Enter Username")
+                br
+                label(for="password") Password
+                br
+                input#password(type="password", placeholder="Enter Password")
+                br
+                input#submitButton(type="button", value="SUBMIT")
+    footer
+        span#copyright &copy; www.desiedog.com 2017
+    script(src="js/cms/login.js")

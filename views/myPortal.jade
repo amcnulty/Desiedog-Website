@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        title Desie Dog CMS Portal
+        meta(http-equiv='content-language', content='en')
+        meta(charset="UTF-8")
+        meta(name='author', content='Aaron Michael McNulty')
+        link(rel="stylesheet", type="text/css" href="../css/cms/myPortal.css")
+    body
+    h1
+        | Welcome 
+        span#userName
+        |!
+    form
+        label(for="title") Article Title
+        br
+        input#title(type="text" placeholder="Article Name")
+        br
+        label(for="pageTitle") Page Title
+        br
+        input#pageTitle(type="text" placeholder="title-of-page")
+        br
+        label(for="paragraph") Paragraph
+        br
+        textarea#paragraph(name="paragraph", cols="30", rows="10", placeholder="Add Content")
+        br
+        input#submitButton(type="button" value="SUBMIT")
+    br
+    hr
+    a(href="../../forum") Articles Page
+    script(src="../js/cms/myPortal.js", type="text/javascript")

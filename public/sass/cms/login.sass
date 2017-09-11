@@ -1,0 +1,58 @@
+@import "../partials/reset"
+@import "../partials/standards"
+@import "../partials/components"
+
+body 
+    background-image: url("../../res/img/background/cmsLoginBackground.jpg")
+    height: 100vh
+    color: #333333
+
+#centerContent
+    @extend .centerVertical
+    margin-top: -80px
+    text-align: center
+
+#welcomeText
+    display: inline-block
+    border-bottom: 2px solid #333333
+    margin-bottom: 20px
+
+#signInBox
+    display: inline-block
+    padding: 50px
+    background-color: rgba(255, 255, 255, .3)
+
+form
+    input:not(:last-child)
+        @extend .input
+        margin-top: 20px
+
+#userName
+    margin-bottom: 30px
+
+#submitButton
+    margin-top: 20px
+    font-size: 1.1em
+    padding: 10px
+    border: none
+    background-color: #01579b
+    color: white
+    cursor: pointer
+    border-radius: 5px
+
+#submitButton:focus
+    background-color: #002f6c
+
+#submitButton:hover
+    background-color: #002f6c
+
+footer
+    position: absolute
+    bottom: 0px
+    width: 100%
+    height: 30px
+    line-height: 30px
+    background-color: rgba(255, 255, 255, .3)
+    text-align: right
+    span
+        padding-right: 30px

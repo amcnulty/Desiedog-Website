@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<link rel="icon" type="image/x-icon" href="res/icon/favicon.ico">-->
+        <title>Desie Dog Blog | Welcome!</title>
+        <meta name="description" content="A blog about Desie the dog! Come read about her stories and share your own with us.">
+        <meta http-equiv="content-language" content="en">
+        <meta charset="UTF-8">
+        <meta name="author" content="Aaron Michael McNulty">
+        <base href="/">
+        <link rel="stylesheet" type="text/css" href="css/home/home.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--The top nav bar-->
+        <div data-include="../templates/nav/topBar.html"></div>
+
+        <div id="homeContent">
+            <div id="landing">
+                <div id="landingTop">
+                    <h1 id="landingSlogan">
+                        A Place For All Things Dog</br>
+                        And The Owners That Love Them!
+                    </h1>
+                    <div id="thumbnailWrapper">
+                        <img class="landingThumbnail" alt="Dog House" src="res/img/thumbnails/dogHouse.png">
+                        <img class="landingThumbnail" alt="Bone" src="res/img/thumbnails/dogBone.png">
+                        <img class="landingThumbnail" alt="Paw" src="res/img/thumbnails/dogPaw.png">
+                        <img class="landingThumbnail" alt="Heart" src="res/img/thumbnails/heart.png">
+                    </div>
+                </div>
+            </div>
+            <div id="quoteSection">
+                <div id="QStopFade"></div>
+                <div id="QSleft">
+                    <img id="desiePencil" alt="pencil drawing of desie" src="res/img/desie_pencil.png">
+                </div>
+                <div id="QSright">
+                    <h1 id="quoteHeader">~ Desie's Quote Of The Week ~</h1><br>
+                    <p id="quoteOfTheWeek"><q>If you are going to move...move to San Diego where there are lots of dogs to hang out with!!</q> -- Desie The Dog</p>
+                </div>
+                <div id="QSbottomFade"></div>
+            </div>
+            <div id="infoBoxSection">
+                <div id="boxWrapper">
+                    <div class="infoBox" id="aboutIB">
+                        <div class="pictureBox left">
+                            <img src="res/img/thumbnails/about.png" alt="About Us">
+                        </div>
+                        <div class="IBcontent right">
+                            <p class="IBCwording">
+                                Learn about desiedog.com, our story, the team, and FAQs.
+                            </p>
+                            <div class="IBCbutton">
+                                About Us
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoBox" id="forumIB">
+                        <div class="pictureBox right">
+                            <img src="res/img/thumbnails/forum.png" alt="Forum">
+                        </div>
+                        <div class="IBcontent left">
+                            <p class="IBCwording">
+                                Check out our trending topics on the bark board.
+                            </p>
+                            <div class="IBCbutton">
+                                Forum
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="infoBox" id="galleryIB">
+                        <div class="pictureBox left">
+                            <img src="res/img/thumbnails/gallery.png" alt="Gallery">
+                        </div>
+                        <div class="IBcontent right">
+                            <p class="IBCwording">
+                                Submit your photo to get voted top dog of the week and win!
+                            </p>
+                            <div class="IBCbutton">
+                                Gallery
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoBox" id="shopIB">
+                        <div class="pictureBox right">
+                            <img src="res/img/thumbnails/shop.png" alt="Shop">
+                        </div>
+                        <div class="IBcontent left">
+                            <p class="IBCwording">
+                                See our favorite items for our furry friends at the shop.
+                            </p>
+                            <div class="IBCbutton">
+                                Shop
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--The bottom footer-->
+        <div data-include="../templates/nav/myFooter.html"></div>
+
+
+        <script src="js/home.js" type="text/javascript"></script>
+    </body>
+</html>
