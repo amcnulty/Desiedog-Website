@@ -13,7 +13,7 @@ var secret = require('./keys/secret');
 
 var app = express();
 
-// view engine setup
+// View engine setup
 // this is where you can set up an engine to render jade or ejs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
