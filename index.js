@@ -4,8 +4,6 @@ var path = require('path');
 var bodyParser = require('body-parser');
 require('dotenv').config();
 var session = require('express-session');
-var fs = require('fs');
-var multer = require('multer');
 
 var pageRoutes = require('./routes/pageRoutes');
 var users = require('./routes/users');
@@ -25,10 +23,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(session({secret: process.env.secretKey, resave: false, saveUninitialized: false}));
-// app.use(multer({dest: '../uploads/', rename: function (fieldname, filename) {
-//     return filename;
-//   },
-// }));
 
 app.use('/', pageRoutes);
 app.use('/users', users);

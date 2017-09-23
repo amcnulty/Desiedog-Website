@@ -1,22 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var fs = require('fs');
-var multer = require('multer');
 var router = express.Router();
 var User = require('../lib/User');
-
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + ".png");
-  }
-});
  
-// var upload = multer({ dest: 'uploads/' });
-var upload = multer({ storage: storage });
-
 bcrypt = require('bcrypt'),
 SALT_WORK_FACTOR = 10;
 
@@ -47,40 +33,6 @@ router.get('/shop', function(req, res) {
 router.get('/articles/:articleName', function(req, res) {
     var articleName = req.params.articleName;
     res.render('articles/' + articleName);
-});
-
-router.get('/photo', function(req, res) {
-    res.render('photo');
-});
-
-router.post('/photo', function(req,res) {
-    var newuser = new User();
-    newuser.userName = 'userName2';
-    newuser.password = 'password';
-    newuser.firstName = 'firstName';
-    newuser.lastName = 'lastName';
-    newuser.profileImg = req.body.profileImg;
-    console.log('!!!!!!!!!!!!!!!!' + req.socket.bytesRead);
-    newuser.save(function(err, savedUser) {
-        if(err) {
-            console.error(err);
-            return res.status(500).send();
-        }
-        return res.status(200).send();
-    });
-});
-
-router.get('/photo/load', function(req, res) {
-    User.findOne({ userName: "userName2"}, function(err, user) {
-        if(err) {
-            console.error(err);
-            return res.status(500).send();
-        }
-        if(!user) {
-            return res.status(404).send();
-        }
-        return res.status(200).send(user.profileImg);
-    });
 });
 
 router.post('/login', function(req, res) {
