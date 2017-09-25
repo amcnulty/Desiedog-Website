@@ -49,11 +49,15 @@ router.get('/my-portal', function(req, res) {
 });
 
 router.post('/publishArticle', function(req, res) {
+    var poster = req.body.poster;
+    var headline = req.body.headline;
     var title = req.body.title;
     var pageTitle = req.body.pageTitle;
     var author = req.body.author;
     var articleBody = req.body.articleBody;
     var article = new Article();
+    article.poster = poster;
+    article.headline = headline;
     article.title = title;
     article.pageTitle = pageTitle;
     article.author = author;

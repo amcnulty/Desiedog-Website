@@ -12,10 +12,6 @@ html, body {
   position: relative;
   float: right; }
 
-.greyBox {
-  background-color: rgba(221, 221, 221, 0.85);
-  border: 1px solid #333333; }
-
 .centerVertical, #centerContent {
   position: relative;
   top: 50%;
@@ -47,6 +43,16 @@ html, body {
 .mainHeaderUnderline {
   border-bottom: 5px solid blue; }
 
+.link {
+  text-decoration: none; }
+
+.link:hover {
+  color: #8888ff; }
+
+.greyBox, .shadowBox {
+  background-color: rgba(221, 221, 221, 0.85);
+  border: 1px solid #333333; }
+
 .input, form input:not(:last-child) {
   border: none;
   outline: none;
@@ -61,6 +67,17 @@ html, body {
 
 .input::placeholder, form input:not(:last-child)::placeholder {
   font-size: 0.8em; }
+
+.shadowBox {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 200px;
+  margin: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 10px 3px #5c5c5c; }
+
+.shadowBox:hover {
+  box-shadow: 12px 12px 10px 3px #404040; }
 
 body {
   background-image: url("../../res/img/background/cmsLoginBackground.jpg");

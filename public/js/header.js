@@ -51,6 +51,9 @@ function load() {
             loggedIn.addEventListener("mouseleave", function() {
                 hideDropDown();
             }, false);
+            portalButton.addEventListener("click", function() {
+                window.location = "cms/my-portal";
+            }, false);
             logOutButton.addEventListener("click", logUserOut, false);
             // If user presses enter on forms it will send data
             signInView.addEventListener("keyup", function(e) {
@@ -216,6 +219,8 @@ function load() {
     // The drop down box once logged in
     var dropDownBox = null;
     var dashboardButton = null;
+    var messagesButton = null;
+    var portalButton = null;
     var settingsButton = null;
     var logOutButton = null;
     // List of views to be displayed by tab click
@@ -268,6 +273,8 @@ function load() {
         topBarUserName = document.getElementById("topBarUserName");
         dropDownBox = document.getElementById("loggedInDropDown");
         dashboardButton = document.getElementById("dashboardButton");
+        messagesButton = document.getElementById("messagesButton");
+        portalButton = document.getElementById("portalButton");
         settingsButton = document.getElementById("settingsButton");
         logOutButton = document.getElementById("logOutButton");
         signInBox = document.getElementById("signInBox");

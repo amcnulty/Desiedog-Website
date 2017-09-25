@@ -1,16 +1,25 @@
 @import "../partials/components"
 
+input
+	@extend .input
+
 #wysihtml5-toolbar 
-	height: 40px
-	margin-top: 30px
+	padding: 16px 0px 16px 0px
+	// height: 40px
+	// margin-top: 30px
 	a
+		display: inline-block
 		background-color: #efefef
 		color: black
 		text-decoration: none
 		font-weight: bold
+		margin: 10px 5px 10px 5px
 		padding: 8px 5px 8px 5px
 		border: 1px solid black
-		margin: 0px 5px 0px 5px
+		cursor: pointer
+
+#imageCaption
+	margin-left: 10px
 
 .selected
 	box-shadow: inset 0px 0px 8px #333333

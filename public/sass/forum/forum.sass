@@ -1,26 +1,63 @@
 @import "../partials/standards"
+@import "../partials/components"
 @import "../partials/reset"
 @import "../nav/header"
 @import "../nav/footer"
 
-#construction
-    // background-size: cover
-    width: 100%
-    height: 70vh
-
 #content
-    background: url("../../res/img/construction.jpg") center center no-repeat
-    width: 70%
-    height: 70vh
-    margin: 0 auto
+    background: url("../../res/img/background/subtleBackground.jpg") center center repeat
+    width: 100%
+
+#pageHeader
+    margin: 0px
+    padding: 10px 0px 10px 0px
     text-align: center
-    color: #333333
 
-h2
-    border-bottom: 2px solid #333333
-    margin-bottom: 30px
+#pageDescription
+    width: 50%
+    margin: 0 auto
+    line-height: 1.5em
+    font-size: 1.2em
 
-ul
-    display: inline-block
-    list-style: none
-    line-height: 1.3em
+#featuredBox
+    @extend .shadowBox
+    @extend .centerHorizontal
+    width: 700px
+
+.boxSection
+    width: 50%
+    height: 100%
+    float: left
+
+#featuredPoster
+    @extend .centerBoth
+    max-width: 300px
+
+#featuredHeadline
+    line-height: 1.5em
+    font-size: 1.5em
+
+#featuredLink
+    @extend .link
+    position: absolute
+    bottom: 10px
+    font-size: 1.2em
+
+#articleSection
+    text-align: center
+
+.smallArticle
+    @extend .shadowBox
+    vertical-align: top
+    width: 310px
+    height: 400px
+
+.articlePoster
+    max-width: 300px
+    margin-top: 5px
+
+.articleHeadline
+    text-align: left
+    line-height: 1.5em
+    font-size: 1.1em
+    padding: 0px 15px 0px 15px

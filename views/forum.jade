@@ -14,8 +14,17 @@ html
     // The top nav bar
     div(data-include='../templates/nav/topBar.html')
     #content
-      h2 Article Links
-      ul#articleLinks
+      h2#pageHeader Discussions and Articles
+      p#pageDescription Here you will find articles with a wide range of topics. Join the discussion by commenting on articles that you find interesting. Our mission is to spread knowledge to pet owners in an attempt to make this a better world for both owners and their pets.
+      hr
+      div#featuredBox
+        div.boxSection
+          img#featuredPoster(src="" alt="Featured Article Poster")
+        div.boxSection
+          p#featuredHeadline
+          a#featuredLink(href="") Read Article
+      hr
+      div#articleSection
     // The bottom footer
     div(data-include='../templates/nav/myFooter.html')
     script(src='js/header.js' type='text/javascript')

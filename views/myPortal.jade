@@ -12,6 +12,14 @@ html(lang="en")
         span#userName
         |!
     form
+        label(for="poster") Add poster image
+        br
+        input#poster(type="text" placeholder="http://")
+        br
+        label(for="headline") Add a headline
+        br
+        input#headline(type="text" placeholder="Short Description")
+        br
         label(for="title") Article Title
         br
         input#title(type="text" placeholder="Article Name")
@@ -28,19 +36,19 @@ html(lang="en")
         a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='p') Paragraph
         a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h1') heading 1
         a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h2') heading 2
-        a(data-wysihtml5-command='bold') bold
+        a(data-wysihtml5-command='bold') bold 
         a(data-wysihtml5-command='italic') italic
         a(data-wysihtml5-command='underline') underline
         a(data-wysihtml5-command='insertOrderedList') insert ordered list
         a(data-wysihtml5-command='insertUnorderedList') insert unordered list
         a(data-wysihtml5-command='createLink') insert link
+        a(data-wysihtml5-command='insertImage') insert image
         div(data-wysihtml5-dialog='createLink', style='display: none;')
             label
                 | Link:
                 input.text(data-wysihtml5-dialog-field='href', value='http://')
             a(data-wysihtml5-dialog-action='save') OK
             a(data-wysihtml5-dialog-action='cancel') Cancel
-        a(data-wysihtml5-command='insertImage') insert image
         div(data-wysihtml5-dialog='insertImage', style='display: none;')
             label
                 | Image:

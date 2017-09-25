@@ -1,3 +1,16 @@
+$boxBackgroundColor: rgba(221, 221, 221, .85)
+$boxBorderColor: #333333
+
+.link
+    text-decoration: none
+
+.link:hover
+    color: #8888ff
+
+.greyBox
+    background-color: $boxBackgroundColor
+    border: 1px solid $boxBorderColor
+
 .input
     border: none
     outline: none
@@ -12,3 +25,15 @@
 
 .input::placeholder
     font-size: .8em
+
+.shadowBox
+    @extend .greyBox
+    cursor: pointer
+    position: relative
+    display: inline-block
+    height: 200px
+    margin: 20px 20px 20px 20px
+    box-shadow: 10px 10px 10px 3px rgba(92, 92, 92, 1)
+
+.shadowBox:hover
+    box-shadow: 12px 12px 10px 3px rgba(64, 64, 64, 1)

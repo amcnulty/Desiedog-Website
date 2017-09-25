@@ -6,10 +6,6 @@
   position: relative;
   float: right; }
 
-.greyBox, .section {
-  background-color: rgba(221, 221, 221, 0.85);
-  border: 1px solid #333333; }
-
 .centerVertical, #topBarLogo, #loggedIn, #signIn {
   position: relative;
   top: 50%;
@@ -41,11 +37,15 @@
 .mainHeaderUnderline, #aboutHeader {
   border-bottom: 5px solid blue; }
 
-html, body {
-  margin: 0px;
-  padding: 0px;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif; }
+.link {
+  text-decoration: none; }
+
+.link:hover {
+  color: #8888ff; }
+
+.greyBox, .shadowBox, .section {
+  background-color: rgba(221, 221, 221, 0.85);
+  border: 1px solid #333333; }
 
 .input, .popupInput {
   border: none;
@@ -61,6 +61,59 @@ html, body {
 
 .input::placeholder, .popupInput::placeholder {
   font-size: 0.8em; }
+
+.shadowBox {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 200px;
+  margin: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 10px 3px #5c5c5c; }
+
+.shadowBox:hover {
+  box-shadow: 12px 12px 10px 3px #404040; }
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+.link {
+  text-decoration: none; }
+
+.link:hover {
+  color: #8888ff; }
+
+.greyBox, .shadowBox, .section {
+  background-color: rgba(221, 221, 221, 0.85);
+  border: 1px solid #333333; }
+
+.input, .popupInput {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #333333;
+  font-size: 1.1em;
+  background: none;
+  padding: 4px 4px 4px 4px; }
+
+.input:focus, .popupInput:focus {
+  border-color: #01579b;
+  box-shadow: 0px 6px 6px -6px #01579b; }
+
+.input::placeholder, .popupInput::placeholder {
+  font-size: 0.8em; }
+
+.shadowBox {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 200px;
+  margin: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 10px 3px #5c5c5c; }
+
+.shadowBox:hover {
+  box-shadow: 12px 12px 10px 3px #404040; }
 
 #topBar {
   width: 100%;
