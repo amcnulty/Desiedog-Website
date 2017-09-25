@@ -20,12 +20,39 @@ html(lang="en")
         br
         input#pageTitle(type="text" placeholder="title-of-page")
         br
-        label(for="paragraph") Paragraph
+        label(for="author") Author
         br
-        textarea#paragraph(name="paragraph", cols="30", rows="10", placeholder="Add Content")
+        input#author(type="text" placeholder="Author")
         br
-        input#submitButton(type="button" value="SUBMIT")
+    #wysihtml5-toolbar(style='display: none;')
+        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='p') Paragraph
+        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h1') heading 1
+        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h2') heading 2
+        a(data-wysihtml5-command='bold') bold
+        a(data-wysihtml5-command='italic') italic
+        a(data-wysihtml5-command='underline') underline
+        a(data-wysihtml5-command='insertOrderedList') insert ordered list
+        a(data-wysihtml5-command='insertUnorderedList') insert unordered list
+        a(data-wysihtml5-command='createLink') insert link
+        div(data-wysihtml5-dialog='createLink', style='display: none;')
+            label
+                | Link:
+                input.text(data-wysihtml5-dialog-field='href', value='http://')
+            a(data-wysihtml5-dialog-action='save') OK
+            a(data-wysihtml5-dialog-action='cancel') Cancel
+        a(data-wysihtml5-command='insertImage') insert image
+        div(data-wysihtml5-dialog='insertImage', style='display: none;')
+            label
+                | Image:
+                input(data-wysihtml5-dialog-field='src', value='http://')
+                input#imageCaption(placeholder='Add a caption to this image')
+            a#imageOk(data-wysihtml5-dialog-action='save') OK
+            a(data-wysihtml5-dialog-action='cancel') Cancel
+    textarea#wysihtml5-textarea(placeholder='Enter your text ...')
     br
+    button#submitButton Publish
     hr
     a(href="../../forum") Articles Page
+    script(src='../tools/xing-wysihtml5-fb0cfe4/parser_rules/advanced.js')
+    script(src='../tools/xing-wysihtml5-fb0cfe4/dist/wysihtml5-0.3.0.min.js')
     script(src="../js/cms/myPortal.js", type="text/javascript")

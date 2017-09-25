@@ -1,17 +1,14 @@
 .left {
   position: relative;
-  float: left;
-}
+  float: left; }
 
 .right {
   position: relative;
-  float: right;
-}
+  float: right; }
 
 .greyBox {
   background-color: rgba(221, 221, 221, 0.85);
-  border: 1px solid #333333;
-}
+  border: 1px solid #333333; }
 
 .centerVertical, #topBarLogo, #loggedIn, #signIn {
   position: relative;
@@ -20,8 +17,7 @@
   -moz-transform: translate(0%, -50%);
   -ms-transform: translate(0%, -50%);
   -o-transform: translate(0%, -50%);
-  transform: translate(0%, -50%);
-}
+  transform: translate(0%, -50%); }
 
 .centerHorizontal, .submitButton {
   position: relative;
@@ -30,8 +26,7 @@
   -moz-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
   -o-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-}
+  transform: translate(-50%, 0%); }
 
 .centerBoth, #signInBox {
   position: relative;
@@ -41,19 +36,16 @@
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+  transform: translate(-50%, -50%); }
 
 .mainHeaderUnderline {
-  border-bottom: 5px solid blue;
-}
+  border-bottom: 5px solid blue; }
 
 html, body {
   margin: 0px;
   padding: 0px;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  font-family: Arial, Helvetica, sans-serif; }
 
 .input, .popupInput {
   border: none;
@@ -61,31 +53,25 @@ html, body {
   border-bottom: 2px solid #333333;
   font-size: 1.1em;
   background: none;
-  padding: 4px 4px 4px 4px;
-}
+  padding: 4px 4px 4px 4px; }
 
 .input:focus, .popupInput:focus {
   border-color: #01579b;
-  box-shadow: 0px 6px 6px -6px #01579b;
-}
+  box-shadow: 0px 6px 6px -6px #01579b; }
 
 .input::placeholder, .popupInput::placeholder {
-  font-size: 0.8em;
-}
+  font-size: 0.8em; }
 
 #topBar {
   width: 100%;
   height: 50px;
-  background-color: #ccc;
-}
+  background-color: #ccc; }
 
 #topBarLogo {
-  top: 22px;
-}
+  top: 22px; }
 
 nav {
-  float: left;
-}
+  float: left; }
 
 .navText, #topBarUrl, .navButton {
   font-weight: bolder;
@@ -95,29 +81,24 @@ nav {
   padding: 0px 8px 0px 8px;
   line-height: 50px;
   display: inline-block;
-  color: whitesmoke;
-}
+  color: whitesmoke; }
 
 .navButton {
   text-decoration: none;
-  outline: 0px;
-}
+  outline: 0px; }
 
 .navButton:hover {
   background-color: #aaa;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #leftLogo {
   float: left;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
 #rightNav {
   position: relative;
   float: right;
-  margin-right: 20px;
-}
+  margin-right: 20px; }
 
 #loggedIn {
   display: none;
@@ -125,34 +106,30 @@ nav {
   line-height: 50px;
   cursor: pointer;
   margin: 0px 0px 0px 8px;
-  z-index: 3;
-}
+  z-index: 3; }
 
 #topBarProfilePic {
-  position: absolute;
-}
-#topBarProfilePic img {
-  position: relative;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-#topBarProfilePic div {
-  display: none;
-  position: relative;
-  top: -30px;
-  left: -10px;
-  padding: 2px 3px 2px 3px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  height: 0.9em;
-  line-height: 0.9em;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  font-size: 0.9em;
-}
+  position: absolute; }
+  #topBarProfilePic img {
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+  #topBarProfilePic div {
+    display: none;
+    position: relative;
+    top: -30px;
+    left: -10px;
+    padding: 2px 3px 2px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    height: 0.9em;
+    line-height: 0.9em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9em; }
 
 #topBarUserWelcome {
   margin: 0px 0px 0px 50px;
@@ -162,8 +139,7 @@ nav {
   max-width: 250px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
+  text-overflow: ellipsis; }
 
 #loggedInDropDown {
   visibility: hidden;
@@ -176,58 +152,47 @@ nav {
   width: 150px;
   padding: 15px 8px 8px 8px;
   background: white;
-  box-shadow: 0px 10px 40px 15px #ffffff;
-}
+  box-shadow: 0px 10px 40px 15px #ffffff; }
 
 .showDropDown {
-  animation: 0.3s ease-out 0s 1 forwards dropDownFadeIn;
-}
+  animation: 0.3s ease-out 0s 1 forwards dropDownFadeIn; }
 
 @keyframes dropDownFadeIn {
   0% {
     visibility: visible;
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
     visibility: visible;
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
 #LIDDheader {
   display: inline-block;
   text-align: center;
   padding: 0px 0px 10px 0px;
   margin: 0px;
-  border-bottom: 1px solid #eee;
-}
+  border-bottom: 1px solid #eee; }
 
 .dropDownItem {
   width: 100%;
   padding: 5px 0px 5px 0px;
-  margin: 2px 0px 2px 0px;
-}
-.dropDownItem p {
-  font-size: 0.8em;
-  margin: 0px;
-  padding: 0px;
-}
+  margin: 2px 0px 2px 0px; }
+  .dropDownItem p {
+    font-size: 0.8em;
+    margin: 0px;
+    padding: 0px; }
 
 .dropDownItem:hover {
   background: #ddd;
-  color: blue;
-}
+  color: blue; }
 
 #settingsButton {
   border-bottom: 1px solid #eee;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
 #userSection {
   display: inline-block;
   position: relative;
   float: right;
-  height: 50px;
-}
+  height: 50px; }
 
 #signIn {
   display: inline-block;
@@ -240,8 +205,7 @@ nav {
   font-size: 1.2em;
   padding: 0px 8px 0px 8px;
   border-radius: 10%;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #shadder {
   position: fixed;
@@ -249,26 +213,20 @@ nav {
   left: 0px;
   width: 100%;
   height: 100vh;
-  z-index: -1;
-}
+  z-index: -1; }
 
 .showPopUp {
-  animation: 0.3s ease-out 0s 1 forwards popUpFadeIn;
-}
+  animation: 0.3s ease-out 0s 1 forwards popUpFadeIn; }
 
 @keyframes popUpFadeIn {
   0% {
     background: rgba(52, 54, 66, 0);
-    z-index: -1;
-  }
+    z-index: -1; }
   1% {
-    z-index: 1;
-  }
+    z-index: 1; }
   100% {
     background: rgba(52, 54, 66, 0.9);
-    z-index: 1;
-  }
-}
+    z-index: 1; } }
 #signInBox {
   position: relative;
   width: 400px;
@@ -277,21 +235,16 @@ nav {
   background-color: white;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  opacity: 0;
-}
+  opacity: 0; }
 
 .showSignInBox {
-  animation: 0.3s linear 0.3s 1 forwards signInBoxFadeIn;
-}
+  animation: 0.3s linear 0.3s 1 forwards signInBoxFadeIn; }
 
 @keyframes signInBoxFadeIn {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
 #popupExitButton {
   position: absolute;
   top: -60px;
@@ -299,12 +252,10 @@ nav {
   cursor: pointer;
   color: white;
   font-size: 1.4em;
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 #popupExitButton:hover {
-  color: red;
-}
+  color: red; }
 
 .tab {
   position: absolute;
@@ -315,45 +266,37 @@ nav {
   text-align: center;
   background-color: #b4b4b4;
   cursor: pointer;
-  border: 1px solid #ababab;
-}
+  border: 1px solid #ababab; }
 
 #signInTab {
   left: 0px;
-  border-top-left-radius: 30px;
-}
+  border-top-left-radius: 30px; }
 
 #registerTab {
   right: 0px;
-  border-top-right-radius: 30px;
-}
+  border-top-right-radius: 30px; }
 
 .tabView {
   position: absolute;
   top: 0px;
   left: 5%;
-  width: 90%;
-}
+  width: 90%; }
 
 #signInView {
   visibility: visible;
   z-index: 1;
-  height: 200px;
-}
+  height: 200px; }
 
 #regView {
   visibility: hidden;
-  height: 400px;
-}
+  height: 400px; }
 
 .popupHeader {
-  text-align: center;
-}
+  text-align: center; }
 
 .popupLabel {
   position: relative;
-  top: 10px;
-}
+  top: 10px; }
 
 .popupInputError {
   position: relative;
@@ -361,8 +304,7 @@ nav {
   font-size: 0.8em;
   color: red;
   font-weight: bold;
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 #forgotPasswordLink {
   display: inline-block;
@@ -370,8 +312,7 @@ nav {
   color: blue;
   top: -10px;
   font-size: 0.8em;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .submitButton {
   background-color: white;
@@ -381,58 +322,48 @@ nav {
   font-size: 1.2em;
   border-radius: 5px;
   padding: 8px 8px 8px 8px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .submitButton:hover {
   background-color: blue;
-  color: white;
-}
+  color: white; }
 
 #myFooter {
   position: relative;
   width: 100%;
   background-color: #1F2022;
   padding-bottom: 30px;
-  color: #888888;
-}
+  color: #888888; }
 
 #copyright {
   text-align: center;
   margin: 0px;
   padding-top: 9px;
-  font-size: 1.2em;
-}
+  font-size: 1.2em; }
 
 #footerLeft {
   border-right: 2px solid #888888;
-  width: 60%;
-}
-#footerLeft a {
-  font-size: 1.5em;
-  margin: 6px 0px 0px 90px;
-  text-decoration: none;
-  color: #888888;
-}
-#footerLeft a:hover {
-  color: whitesmoke;
-}
+  width: 60%; }
+  #footerLeft a {
+    font-size: 1.5em;
+    margin: 6px 0px 0px 90px;
+    text-decoration: none;
+    color: #888888; }
+  #footerLeft a:hover {
+    color: whitesmoke; }
 
 #footerRight {
   position: absolute;
   text-align: center;
   width: 40%;
   right: 0px;
-  bottom: 60px;
-}
-#footerRight a {
-  font-size: 1.5em;
-  margin-top: 10px;
-  color: #888888;
-}
-#footerRight a:hover {
-  color: whitesmoke;
-}
+  bottom: 60px; }
+  #footerRight a {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #888888; }
+  #footerRight a:hover {
+    color: whitesmoke; }
 
 #sendAMessage {
   display: inline-block;
@@ -442,18 +373,13 @@ nav {
   font-size: 1.8em;
   font-weight: bolder;
   border-radius: 6px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #sendAMessage:hover {
   color: whitesmoke;
-  border-color: whitesmoke;
-}
+  border-color: whitesmoke; }
 
 #construction {
   background: url("../../res/img/construction.jpg") center center no-repeat;
   width: 100%;
-  height: 70vh;
-}
-
-/*# sourceMappingURL=shop.css.map */
+  height: 70vh; }

@@ -1,19 +1,37 @@
-.input, form input:not(:last-child) {
+.input {
   border: none;
   outline: none;
   border-bottom: 2px solid #333333;
   font-size: 1.1em;
   background: none;
-  padding: 4px 4px 4px 4px;
-}
+  padding: 4px 4px 4px 4px; }
 
-.input:focus, form input:focus:not(:last-child) {
+.input:focus {
   border-color: #01579b;
-  box-shadow: 0px 6px 6px -6px #01579b;
-}
+  box-shadow: 0px 6px 6px -6px #01579b; }
 
-.input::placeholder, form input:not(:last-child)::placeholder {
-  font-size: 0.8em;
-}
+.input::placeholder {
+  font-size: 0.8em; }
 
-/*# sourceMappingURL=myPortal.css.map */
+#wysihtml5-toolbar {
+  height: 40px;
+  margin-top: 30px; }
+  #wysihtml5-toolbar a {
+    background-color: #efefef;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 5px 8px 5px;
+    border: 1px solid black;
+    margin: 0px 5px 0px 5px; }
+
+.selected {
+  box-shadow: inset 0px 0px 8px #333333; }
+
+textarea {
+  width: 90%;
+  height: 80vh; }
+
+#submitButton {
+  background-color: #bfbfbf;
+  padding: 8px 5px 8px 5px; }

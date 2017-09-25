@@ -5,7 +5,8 @@ var router = express.Router();
 var User = require('../lib/User');
 var Article = require('../lib/Article');
 
-mongoose.connect('mongodb://heroku_gcnjfqcs:l71nq4et2psh13qf3gn2rhrgen@ds145010.mlab.com:45010/heroku_gcnjfqcs');
+// mongoose.connect('mongodb://heroku_gcnjfqcs:l71nq4et2psh13qf3gn2rhrgen@ds145010.mlab.com:45010/heroku_gcnjfqcs');
+mongoose.connect(process.env.MONGODB_URI);
 
 router.get('/', function(req, res) {
     res.render('cms');
@@ -47,42 +48,24 @@ router.get('/my-portal', function(req, res) {
     res.render('myPortal');
 });
 
-router.post('/createJadeFile', function(req, res) {
+router.post('/publishArticle', function(req, res) {
     var title = req.body.title;
     var pageTitle = req.body.pageTitle;
-    var paragraph = req.body.paragraph;
-    var jadeStructure = "doctype html\n" + 
-    "html(lang='en')\n" + 
-    "\thead\n" +
-    "\t\ttitle " + "Desie Dog Articles | " + title + "\n" +
-    "\tbody\n" +
-    "\t\th1 " + title + "\n" +
-    "\t\tp " + paragraph;
-    fs.mkdir("./views/articles/", function() { // New Directory Created
-        // Create write stream (create new file)
-        var myWriteStream = fs.createWriteStream("./views/articles/" + pageTitle + ".jade");
-        // Callback when file is open
-        myWriteStream.once("open", function(fd) {
-            myWriteStream.write(jadeStructure, function() {
-                myWriteStream.close();
-            });
-        });
-        myWriteStream.once("close", function() {
-            // finished writing file
-            // Save article to database
-            var article = new Article();
-            article.title = title;
-            article.location = pageTitle;
-            article.save(function(err, savedArticle) {
-                if(err) {
-                    console.error(err);
-                    return res.status(500).send();
-                }
-                return res.status(200).send();
-            });
-            return res.status(200).send();
-        });
+    var author = req.body.author;
+    var articleBody = req.body.articleBody;
+    var article = new Article();
+    article.title = title;
+    article.pageTitle = pageTitle;
+    article.author = author;
+    article.articleBody = articleBody;
+    article.save(function(err, savedArticle) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
+        return res.status(200).send();
     });
+    return res.status(200).send();
 });
 
 router.get('/articles', function(req, res) {

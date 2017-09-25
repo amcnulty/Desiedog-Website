@@ -2,13 +2,16 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var User = require('../lib/User');
+var Article = require('../lib/Article');
  
 bcrypt = require('bcrypt'),
 SALT_WORK_FACTOR = 10;
 
-mongoose.connect('mongodb://heroku_gcnjfqcs:l71nq4et2psh13qf3gn2rhrgen@ds145010.mlab.com:45010/heroku_gcnjfqcs');
+// mongoose.connect('mongodb://heroku_gcnjfqcs:l71nq4et2psh13qf3gn2rhrgen@ds145010.mlab.com:45010/heroku_gcnjfqcs');
 // for local database testing
 // mongoose.connect('localhost:27017');
+// Connect to database
+mongoose.connect(process.env.MONGODB_URI);
 
 router.get('/', function(req, res) {
     res.render('index');
@@ -30,9 +33,25 @@ router.get('/shop', function(req, res) {
     res.render('shop');
 });
 
-router.get('/articles/:articleName', function(req, res) {
-    var articleName = req.params.articleName;
-    res.render('articles/' + articleName);
+router.get('/articles/:pageTitle', function(req, res) {
+    // search database for article
+    var pageTitle = req.params.pageTitle;
+    Article.findOne({'pageTitle' : pageTitle}, function(err, article) {
+        if (err) {
+            return res.status(500).send();
+        }
+        // retrieve template
+        var template = "<!DOCTYPE html><html lang='en'><head><title>zt</title><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta http-equiv='X-UA-Compatible' content='ie=edge'><link rel='stylesheet' href='../../css/article/article.css' type='text/css'><script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script></head><body><div data-include='../templates/nav/topBar.html'></div><h1>The author of this article is: za</h1><div id='mainArticleContent'>zc</div><div data-include='../templates/nav/myFooter.html'></div><script src='../../js/header.js' type='text/javascript'></script><script src='../../js/article.js' type='text/javascript'></script></body></html>";
+        // replace title, author, articleBody
+        template = template.replace(/zt/, article.pageTitle);
+        template = template.replace(/za/, article.author);
+        template = template.replace(/zc/, article.articleBody);
+        // send resource
+        res.setHeader('content-type', 'text/html');
+        return res.status(200).send(template);
+    });
+    // res.setHeader('content-type', 'text/html');
+    // return res.status(200).send("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta http-equiv='X-UA-Compatible' content='ie=edge'><title>My test thing</title></head><body><p>Hello World</p></body></html>");
 });
 
 router.post('/login', function(req, res) {

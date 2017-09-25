@@ -9,7 +9,7 @@ function load() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 var articles = JSON.parse(xhr.responseText);
                 for (var i = 0; i < articles.length; i++) {
-                    createLink(articles[i].title, "../articles/" + articles[i].location);
+                    createLink(articles[i].title, "../articles/" + articles[i].pageTitle);
                 }
             }
         }
