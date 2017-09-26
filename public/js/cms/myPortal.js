@@ -132,7 +132,6 @@ function load() {
         var myJSON = new Object();
         myJSON.articles = articlesToBeDeleted;
         var jasonString = JSON.stringify(myJSON);
-        console.log(jasonString);
         xhr.send(jasonString);
     }
 
@@ -231,6 +230,15 @@ function load() {
         }
     }
 
+    function addClassNamesToArticle() {
+        var divs = generatedHTML.getElementsByTagName("div");
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].className = "imageWrapper";
+            divs[i].children[0].className = "articleImage";
+            divs[i].children[1].className = "imageCaption";
+        }
+    }
+
     for (var i = 0; i < tabs.length; i++) {
         tabViews[i] = new TabView(tabs[i], views[i]);
     }
@@ -242,9 +250,15 @@ function load() {
 
     articleTitleInput.addEventListener("blur", createTitle, false);
 
-    submitButton.addEventListener("click", publishArticle, false);
+    submitButton.addEventListener("click", function() {
+        addClassNamesToArticle();
+        publishArticle();
+    }, false);
 
-    updateButton.addEventListener("click", updateArticle, false);
+    updateButton.addEventListener("click", function() {
+        addClassNamesToArticle();
+        updateArticle();
+    }, false);
 
     resetButton.addEventListener("click", clearNewArticle, false);
 
@@ -269,7 +283,6 @@ function load() {
             generatedHTML.appendChild(newDiv);
             generatedHTML.appendChild(document.createElement("br"));
             generatedHTML.innerHTML += "Continue next paragraph here. To add another image delete this line and insert image on this line. The line above is for editing the caption on the previous image."
-            generatedHTML.removeChild(images[images.length - 1]);
         }, 1000);
     }, false);
 

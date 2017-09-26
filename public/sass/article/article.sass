@@ -3,9 +3,37 @@
 @import "../nav/header"
 @import "../nav/footer"
 
+$thickGreyColor: #808080
+$lightGreyColor: #e4e4e4
+$mainFontColor: #303030
+
 #mainArticleContent
     @extend .centerHorizontal
-    width: 80%
+    width: 60%
+    color: $mainFontColor
+    p
+        font-size: 1.3em
+        line-height: 1.5em
+
+.imageWrapper
+    width: 100%
+    padding: 20px
+    background-color: $lightGreyColor
+    box-sizing: border-box
 
 .articleImage
-    max-width: 100%
+    width: 100%
+
+.imageCaption
+    font-size: .8em !important
+    width: 100%
+    padding: 0px 20px 0px 20px
+    margin: 10px 0px 0px 0px
+    box-sizing: border-box
+
+.thickGrey
+    font-size: 1.4em
+    font-weight: 700
+    color: $thickGreyColor
+    margin: 10px 0px 10px 0px
+    font-style: italic
