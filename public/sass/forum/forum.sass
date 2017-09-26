@@ -1,8 +1,8 @@
 @import "../partials/standards"
-@import "../partials/components"
 @import "../partials/reset"
 @import "../nav/header"
 @import "../nav/footer"
+@import "../partials/articleBox"
 
 #content
     background: url("../../res/img/background/subtleBackground.jpg") center center repeat
@@ -40,7 +40,6 @@
     font-size: 1.3em
     padding: 0px 10px 0px 0px
     box-sizing: border-box
-    word-break: break-all
 
 #featuredLink
     @extend .link
@@ -49,21 +48,4 @@
     font-size: 1.2em
 
 #articleSection
-    text-align: center
-
-.smallArticle
-    @extend .shadowBox
-    vertical-align: top
-    width: 310px
-    height: 400px
-
-.articlePoster
-    max-width: 300px
-    margin-top: 5px
-
-.articleHeadline
-    text-align: left
-    line-height: 1.5em
-    font-size: 1.1em
-    padding: 0px 15px 0px 15px
-    word-break: break-all
+    text-align: center 

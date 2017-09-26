@@ -131,6 +131,7 @@ router.put('/setFeaturedArticle', function(req, res) {
         else if (!article) {
             // no article is set to featured
             console.log("No article was found with query {featured: true}.")
+            return res.status(404).send();
         }
         article.featured = false;
         article.save(function(err, savedArticle) {

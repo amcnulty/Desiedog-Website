@@ -83,8 +83,8 @@ function load() {
         xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                alert("You have successfully published a new article!")
-                // TODO: alert the user that page has been successfully published
+                loadArticles();
+                alert("You have successfully published a new article!");
             }
         }
         var myJSON = new Object();
@@ -126,7 +126,8 @@ function load() {
         xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                alert("Successfully deleted content.")
+                loadArticles();
+                alert("Successfully deleted content.");
             }
         }
         var myJSON = new Object();
@@ -177,6 +178,9 @@ function load() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 articles = JSON.parse(xhr.responseText);
+                document.getElementById("AVeditLoadedArticles").innerHTML = "";
+                document.getElementById("AVdeleteLoadedArticles").innerHTML = "";
+                document.getElementById("AVfeaturedLoadedArticles").innerHTML = "";
                 for (var i = 0; i < articles.length; i++) {
                     populateList(articles[i]);
                 }

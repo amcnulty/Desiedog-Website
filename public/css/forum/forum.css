@@ -37,42 +37,6 @@
 .mainHeaderUnderline {
   border-bottom: 5px solid blue; }
 
-.link, #featuredLink {
-  text-decoration: none; }
-
-.link:hover, #featuredLink:hover {
-  color: #8888ff; }
-
-.greyBox, .shadowBox, #featuredBox, .smallArticle {
-  background-color: rgba(221, 221, 221, 0.85);
-  border: 1px solid #333333; }
-
-.input, .popupInput {
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #333333;
-  font-size: 1.1em;
-  background: none;
-  padding: 4px 4px 4px 4px; }
-
-.input:focus, .popupInput:focus {
-  border-color: #01579b;
-  box-shadow: 0px 6px 6px -6px #01579b; }
-
-.input::placeholder, .popupInput::placeholder {
-  font-size: 0.8em; }
-
-.shadowBox, #featuredBox, .smallArticle {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  height: 200px;
-  margin: 20px 20px 20px 20px;
-  box-shadow: 10px 10px 10px 3px #5c5c5c; }
-
-.shadowBox:hover, #featuredBox:hover, .smallArticle:hover {
-  box-shadow: 12px 12px 10px 3px #404040; }
-
 html, body {
   margin: 0px;
   padding: 0px;
@@ -85,7 +49,7 @@ html, body {
 .link:hover, #featuredLink:hover {
   color: #8888ff; }
 
-.greyBox, .shadowBox, #featuredBox, .smallArticle {
+.greyBox, .shadowBox, .smallArticle, #featuredBox {
   background-color: rgba(221, 221, 221, 0.85);
   border: 1px solid #333333; }
 
@@ -104,7 +68,7 @@ html, body {
 .input::placeholder, .popupInput::placeholder {
   font-size: 0.8em; }
 
-.shadowBox, #featuredBox, .smallArticle {
+.shadowBox, .smallArticle, #featuredBox {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -112,7 +76,7 @@ html, body {
   margin: 20px 20px 20px 20px;
   box-shadow: 10px 10px 10px 3px #5c5c5c; }
 
-.shadowBox:hover, #featuredBox:hover, .smallArticle:hover {
+.shadowBox:hover, .smallArticle:hover, #featuredBox:hover {
   box-shadow: 12px 12px 10px 3px #404040; }
 
 #topBar {
@@ -432,6 +396,58 @@ nav {
   color: whitesmoke;
   border-color: whitesmoke; }
 
+.link, #featuredLink {
+  text-decoration: none; }
+
+.link:hover, #featuredLink:hover {
+  color: #8888ff; }
+
+.greyBox, .shadowBox, .smallArticle, #featuredBox {
+  background-color: rgba(221, 221, 221, 0.85);
+  border: 1px solid #333333; }
+
+.input, .popupInput {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #333333;
+  font-size: 1.1em;
+  background: none;
+  padding: 4px 4px 4px 4px; }
+
+.input:focus, .popupInput:focus {
+  border-color: #01579b;
+  box-shadow: 0px 6px 6px -6px #01579b; }
+
+.input::placeholder, .popupInput::placeholder {
+  font-size: 0.8em; }
+
+.shadowBox, .smallArticle, #featuredBox {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  height: 200px;
+  margin: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 10px 3px #5c5c5c; }
+
+.shadowBox:hover, .smallArticle:hover, #featuredBox:hover {
+  box-shadow: 12px 12px 10px 3px #404040; }
+
+.smallArticle {
+  text-align: center;
+  vertical-align: top;
+  width: 310px;
+  height: 400px !important; }
+
+.articlePoster {
+  max-width: 300px;
+  margin-top: 5px; }
+
+.articleHeadline {
+  text-align: left;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  padding: 0px 15px 0px 15px; }
+
 #content {
   background: url("../../res/img/background/subtleBackground.jpg") center center repeat;
   width: 100%; }
@@ -464,8 +480,7 @@ nav {
   line-height: 1.3em;
   font-size: 1.3em;
   padding: 0px 10px 0px 0px;
-  box-sizing: border-box;
-  word-break: break-all; }
+  box-sizing: border-box; }
 
 #featuredLink {
   position: absolute;
@@ -474,19 +489,3 @@ nav {
 
 #articleSection {
   text-align: center; }
-
-.smallArticle {
-  vertical-align: top;
-  width: 310px;
-  height: 400px; }
-
-.articlePoster {
-  max-width: 300px;
-  margin-top: 5px; }
-
-.articleHeadline {
-  text-align: left;
-  line-height: 1.5em;
-  font-size: 1.1em;
-  padding: 0px 15px 0px 15px;
-  word-break: break-all; }

@@ -1,5 +1,5 @@
-@import "../partials/components"
 @import "../partials/standards"
+@import "../partials/articleBox"
 
 $AVheaderItemColor: blue
 $headerHoverColor: rgba(128, 128, 128, .05)
@@ -71,36 +71,18 @@ input
 	background-color: #bfbfbf
 	padding: 8px 5px 8px 5px
 
-.smallArticle
-	@extend .shadowBox
-	text-align: center
-	vertical-align: top
-	width: 310px
-	height: 400px
-
 .redBorder
-	box-shadow: 0px 0px 10px 3px red
+	box-shadow: 0px 0px 10px 3px red !important
 	border-color: red
 
 .redBorder:hover
-	box-shadow: 0px 0px 10px 3px red
+	box-shadow: 0px 0px 10px 3px red !important
 	border-color: red
 
 .greenBorder
-	box-shadow: 0px 0px 10px 3px green
+	box-shadow: 0px 0px 10px 3px green !important
 	border-color: green
 
 .greenBorder:hover
-	box-shadow: 0px 0px 10px 3px green
+	box-shadow: 0px 0px 10px 3px green !important
 	border-color: green
-
-.articlePoster
-	max-width: 300px
-	margin-top: 5px
-
-.articleHeadline
-	text-align: left
-	line-height: 1.5em
-	font-size: 1.1em
-	padding: 0px 15px 0px 15px
-	word-break: break-all
