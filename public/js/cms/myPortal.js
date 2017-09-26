@@ -135,6 +135,21 @@ function load() {
         xhr.send(jasonString);
     }
 
+    function setFeaturedArticle(pageTitle) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", "setFeaturedArticle", true);
+        xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                alert("Successfully set new featured article!");
+            }
+        }
+        var myJSON = new Object();
+        myJSON.pageTitle = pageTitle;
+        var jasonString = JSON.stringify(myJSON);
+        xhr.send(jasonString);
+    }
+
     function formatDate(date) {
         var monthNames = [
           "January", "February", "March",
@@ -223,8 +238,23 @@ function load() {
             }
             else if (i === 2) {
                 document.getElementById("AVfeaturedLoadedArticles").appendChild(articleBox);
+                if (article.featured) articleBox.className = "smallArticle greenBorder";
                 articleBox.addEventListener("click", function(e) {
-                    console.log("I belong to featured articles");
+                    if (e.currentTarget.className === "smallArticle") {
+                        if (document.getElementsByClassName("greenBorder").length === 0) e.currentTarget.className = "smallArticle greenBorder";
+                        else {
+                            document.getElementsByClassName("greenBorder")[0].className = "smallArticle";
+                            e.currentTarget.className = "smallArticle greenBorder";
+                        }
+                    }
+                    else {
+                        e.currentTarget.className = "smallArticle";
+                    }
+                    for (var i = 0; i < articles.length; i++) {
+                        if (articles[i].title === document.getElementsByClassName("greenBorder")[0].title) {
+                            setFeaturedArticle(articles[i].pageTitle);
+                        }
+                    }
                 }, false)
             }
         }

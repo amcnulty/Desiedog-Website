@@ -121,6 +121,45 @@ router.delete('/deleteArticle', function(req, res) {
     }
 });
 
+router.put('/setFeaturedArticle', function(req, res) {
+    var pageTitle = req.body.pageTitle;
+    Article.findOne({ featured: true}, function(err, article) {
+        if (err) {
+            console.error(err);
+            return res.status(500).send();
+        }
+        else if (!article) {
+            // no article is set to featured
+            console.log("No article was found with query {featured: true}.")
+        }
+        article.featured = false;
+        article.save(function(err, savedArticle) {
+            if (err) {
+                console.log(err);
+                return res.status(500).send();
+            }
+            // search for article that user wants to set to featured
+            Article.findOne({ pageTitle: pageTitle}, function(err, article) {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).send();
+                }
+                else if (!article) {
+                    return res.status(404).send();
+                }
+                article.featured = true;
+                article.save(function(err, savedArticle) {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).send();
+                    }
+                    return res.status(200).send();
+                });
+            })
+        });
+    });
+});
+
 router.get('/articles', function(req, res) {
     Article.find(function(err, articles) {
         if(err) {

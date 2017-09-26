@@ -118,7 +118,7 @@
 .selected, .selectedTab {
   box-shadow: inset 0px 0px 8px #333333; }
 
-textarea {
+#AVnewArticle textarea {
   width: 90%;
   height: 80vh; }
 
@@ -149,6 +149,14 @@ textarea {
   box-shadow: 0px 0px 10px 3px red;
   border-color: red; }
 
+.greenBorder {
+  box-shadow: 0px 0px 10px 3px green;
+  border-color: green; }
+
+.greenBorder:hover {
+  box-shadow: 0px 0px 10px 3px green;
+  border-color: green; }
+
 .articlePoster {
   max-width: 300px;
   margin-top: 5px; }
@@ -157,7 +165,8 @@ textarea {
   text-align: left;
   line-height: 1.5em;
   font-size: 1.1em;
-  padding: 0px 15px 0px 15px; }
+  padding: 0px 15px 0px 15px;
+  word-break: break-all; }
 
 html, body {
   margin: 0px;

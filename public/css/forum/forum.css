@@ -448,7 +448,8 @@ nav {
   font-size: 1.2em; }
 
 #featuredBox {
-  width: 700px; }
+  width: 700px;
+  height: 250px; }
 
 .boxSection {
   width: 50%;
@@ -459,8 +460,12 @@ nav {
   max-width: 300px; }
 
 #featuredHeadline {
-  line-height: 1.5em;
-  font-size: 1.5em; }
+  width: 100%;
+  line-height: 1.3em;
+  font-size: 1.3em;
+  padding: 0px 10px 0px 0px;
+  box-sizing: border-box;
+  word-break: break-all; }
 
 #featuredLink {
   position: absolute;
@@ -483,4 +488,5 @@ nav {
   text-align: left;
   line-height: 1.5em;
   font-size: 1.1em;
-  padding: 0px 15px 0px 15px; }
+  padding: 0px 15px 0px 15px;
+  word-break: break-all; }
