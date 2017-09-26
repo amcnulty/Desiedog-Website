@@ -7,60 +7,89 @@ html(lang="en")
         meta(name='author', content='Aaron Michael McNulty')
         link(rel="stylesheet", type="text/css" href="../css/cms/myPortal.css")
     body
-    h1
-        | Welcome 
-        span#userName
-        |!
-    form
-        label(for="poster") Add poster image
-        br
-        input#poster(type="text" placeholder="http://")
-        br
-        label(for="headline") Add a headline
-        br
-        input#headline(type="text" placeholder="Short Description")
-        br
-        label(for="title") Article Title
-        br
-        input#title(type="text" placeholder="Article Name")
-        br
-        label(for="pageTitle") Page Title
-        br
-        input#pageTitle(type="text" placeholder="title-of-page")
-        br
-        label(for="author") Author
-        br
-        input#author(type="text" placeholder="Author")
-        br
-    #wysihtml5-toolbar(style='display: none;')
-        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='p') Paragraph
-        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h1') heading 1
-        a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h2') heading 2
-        a(data-wysihtml5-command='bold') bold 
-        a(data-wysihtml5-command='italic') italic
-        a(data-wysihtml5-command='underline') underline
-        a(data-wysihtml5-command='insertOrderedList') insert ordered list
-        a(data-wysihtml5-command='insertUnorderedList') insert unordered list
-        a(data-wysihtml5-command='createLink') insert link
-        a(data-wysihtml5-command='insertImage') insert image
-        div(data-wysihtml5-dialog='createLink', style='display: none;')
-            label
-                | Link:
-                input.text(data-wysihtml5-dialog-field='href', value='http://')
-            a(data-wysihtml5-dialog-action='save') OK
-            a(data-wysihtml5-dialog-action='cancel') Cancel
-        div(data-wysihtml5-dialog='insertImage', style='display: none;')
-            label
-                | Image:
-                input(data-wysihtml5-dialog-field='src', value='http://')
-                input#imageCaption(placeholder='Add a caption to this image')
-            a#imageOk(data-wysihtml5-dialog-action='save') OK
-            a(data-wysihtml5-dialog-action='cancel') Cancel
-    textarea#wysihtml5-textarea(placeholder='Enter your text ...')
-    br
-    button#submitButton Publish
-    hr
-    a(href="../../forum") Articles Page
+    div#tabSection
+        div#articleTab.tab Articles
+        div#editPagesTab.tab Edit Pages
+        div#userInfoTab.tab User Info
+        div#uploadsTab.tab Manage Uploads
+        div#messagingTab.tab Messaging
+    div#articleView.mainView
+        div#AVheader
+            div.AVheaderItem New Article
+            div.AVheaderItem Edit Article
+            div.AVheaderItem Delete Article
+            div.AVheaderItem Featured Article
+        div#AVnewArticle.AVsubView
+            form
+                label(for="poster") Add poster image
+                br
+                input#poster(type="text" placeholder="http://")
+                br
+                label(for="headline") Add a headline
+                br
+                input#headline(type="text" placeholder="Short Description")
+                br
+                label(for="title") Article Title
+                br
+                input#title(type="text" placeholder="Article Name")
+                br
+                label(for="pageTitle") Page Title
+                br
+                input#pageTitle(type="text" placeholder="title-of-page")
+                br
+                label(for="author") Author
+                br
+                input#author(type="text" placeholder="Author")
+                br
+            #wysihtml5-toolbar(style='display: none;')
+                a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='p') Paragraph
+                a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h1') heading 1
+                a(data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h2') heading 2
+                a(data-wysihtml5-command='bold') bold 
+                a(data-wysihtml5-command='italic') italic
+                a(data-wysihtml5-command='underline') underline
+                a(data-wysihtml5-command='insertOrderedList') insert ordered list
+                a(data-wysihtml5-command='insertUnorderedList') insert unordered list
+                a(data-wysihtml5-command='createLink') insert link
+                a(data-wysihtml5-command='insertImage') insert image
+                div(data-wysihtml5-dialog='createLink', style='display: none;')
+                    label
+                        | Link:
+                        input.text(data-wysihtml5-dialog-field='href', value='http://')
+                    a(data-wysihtml5-dialog-action='save') OK
+                    a(data-wysihtml5-dialog-action='cancel') Cancel
+                div(data-wysihtml5-dialog='insertImage', style='display: none;')
+                    label
+                        | Image:
+                        input(data-wysihtml5-dialog-field='src', value='http://')
+                        input#imageCaption(placeholder='Add a caption to this image')
+                    a#imageOk(data-wysihtml5-dialog-action='save') OK
+                    a(data-wysihtml5-dialog-action='cancel') Cancel
+            textarea#wysihtml5-textarea(placeholder='Enter your text ...')
+            br
+            button#submitButton Publish
+            button#updateButton Update
+            button#resetButton Reset
+            hr
+            a(href="../../forum") Articles Page
+        div#AVeditArticle.AVsubView
+            h2 Choose an article to edit
+            div#AVeditLoadedArticles
+        div#AVdeleteArticle.AVsubView
+            h2 Choose an article to delete
+            button#deleteButton Delete
+            div#AVdeleteLoadedArticles
+        div#AVfeaturedArticle.AVsubView
+            h2 Choose an article to be the featured article
+            div#AVfeaturedLoadedArticles
+    div#editPagesView.mainView
+        h1 Edit Pages
+    div#userInfoView.mainView
+        h1 User Info
+    div#uploadsView.mainView
+        h1 Manage Uploads
+    div#messagingView.mainView
+        h1 Messaging Center
     script(src='../tools/xing-wysihtml5-fb0cfe4/parser_rules/advanced.js')
     script(src='../tools/xing-wysihtml5-fb0cfe4/dist/wysihtml5-0.3.0.min.js')
     script(src="../js/cms/myPortal.js", type="text/javascript")

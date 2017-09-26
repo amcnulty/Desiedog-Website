@@ -1,0 +1,96 @@
+@import "../partials/components"
+@import "../partials/standards"
+
+$AVheaderItemColor: blue
+$headerHoverColor: rgba(128, 128, 128, .05)
+
+input
+	@extend .input
+
+#AVheader
+	width: 100%
+	height: 50px
+	line-height: 50px
+	text-align: center
+
+.AVheaderItem
+	display: inline-block
+	width: 25%
+	float: left
+	box-sizing: border-box
+	cursor: pointer
+	font-weight: bold
+	color: $AVheaderItemColor
+
+.AVheaderItem:hover
+	animation: .5s ease-in-out headerHover forwards
+
+@keyframes headerHover
+	0%
+		box-shadow: inset 0px 0px 1px rgba(128, 128, 128, .1)
+	100%
+		box-shadow: inset 0px 0px 80px rgba(128, 128, 128, 1)
+
+.AVsubView
+	display: none
+
+#wysihtml5-toolbar 
+	padding: 16px 0px 16px 0px
+	a
+		display: inline-block
+		background-color: #efefef
+		color: black
+		text-decoration: none
+		font-weight: bold
+		margin: 10px 5px 10px 5px
+		padding: 8px 5px 8px 5px
+		border: 1px solid black
+		cursor: pointer
+
+#imageCaption
+	margin-left: 10px
+
+.selected
+	box-shadow: inset 0px 0px 8px #333333
+
+textarea
+	width: 90%
+	height: 80vh
+
+#submitButton
+	background-color: #bfbfbf
+	padding: 8px 5px 8px 5px
+
+#updateButton
+	background-color: #bfbfbf
+	padding: 8px 5px 8px 5px
+	display: none
+
+#resetButton
+	background-color: #bfbfbf
+	padding: 8px 5px 8px 5px
+
+.smallArticle
+	@extend .shadowBox
+	text-align: center
+	vertical-align: top
+	width: 310px
+	height: 400px
+
+.redBorder
+	box-shadow: 0px 0px 10px 3px red
+	border-color: red
+
+.redBorder:hover
+	box-shadow: 0px 0px 10px 3px red
+	border-color: red
+
+.articlePoster
+	max-width: 300px
+	margin-top: 5px
+
+.articleHeadline
+	text-align: left
+	line-height: 1.5em
+	font-size: 1.1em
+	padding: 0px 15px 0px 15px

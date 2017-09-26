@@ -41,11 +41,12 @@ router.get('/articles/:pageTitle', function(req, res) {
             return res.status(500).send();
         }
         // retrieve template
-        var template = "<!DOCTYPE html><html lang='en'><head><title>zt</title><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta http-equiv='X-UA-Compatible' content='ie=edge'><link rel='stylesheet' href='../../css/article/article.css' type='text/css'><script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script></head><body><div data-include='../templates/nav/topBar.html'></div><h1>The author of this article is: za</h1><div id='mainArticleContent'>zc</div><div data-include='../templates/nav/myFooter.html'></div><script src='../../js/header.js' type='text/javascript'></script><script src='../../js/article.js' type='text/javascript'></script></body></html>";
+        var template = "<!DOCTYPE html><html lang='en'><head><title>Desiedog Articles | zt</title><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta http-equiv='X-UA-Compatible' content='ie=edge'><link rel='stylesheet' href='../../css/article/article.css' type='text/css'><script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script></head><body><div data-include='../templates/nav/topBar.html'></div><div id='mainArticleContent'><p>Author: <span id='authorName'>za</span></p><p>Published on <span id='articleDate'>zd</span></p><h1 id='articleTitle'>zt</h1>zc</div><div data-include='../templates/nav/myFooter.html'></div><script src='../../js/header.js' type='text/javascript'></script><script src='../../js/article.js' type='text/javascript'></script></body></html>";
         // replace title, author, articleBody
-        template = template.replace(/zt/, article.pageTitle);
+        template = template.replace(/zt/g, article.title);
         template = template.replace(/za/, article.author);
         template = template.replace(/zc/, article.articleBody);
+        template = template.replace(/zd/, article.date);
         // send resource
         res.setHeader('content-type', 'text/html');
         return res.status(200).send(template);

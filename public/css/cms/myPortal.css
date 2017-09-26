@@ -4,7 +4,7 @@
 .link:hover {
   color: #8888ff; }
 
-.greyBox, .shadowBox {
+.greyBox, .shadowBox, .smallArticle {
   background-color: rgba(221, 221, 221, 0.85);
   border: 1px solid #333333; }
 
@@ -23,7 +23,7 @@
 .input::placeholder, input::placeholder {
   font-size: 0.8em; }
 
-.shadowBox {
+.shadowBox, .smallArticle {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -31,8 +31,73 @@
   margin: 20px 20px 20px 20px;
   box-shadow: 10px 10px 10px 3px #5c5c5c; }
 
-.shadowBox:hover {
+.shadowBox:hover, .smallArticle:hover {
   box-shadow: 12px 12px 10px 3px #404040; }
+
+.left {
+  position: relative;
+  float: left; }
+
+.right {
+  position: relative;
+  float: right; }
+
+.centerVertical {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
+
+.centerHorizontal {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%); }
+
+.centerBoth {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.mainHeaderUnderline {
+  border-bottom: 5px solid blue; }
+
+#AVheader {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center; }
+
+.AVheaderItem {
+  display: inline-block;
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  color: blue; }
+
+.AVheaderItem:hover {
+  animation: 0.5s ease-in-out headerHover forwards; }
+
+@keyframes headerHover {
+  0% {
+    box-shadow: inset 0px 0px 1px rgba(128, 128, 128, 0.1); }
+  100% {
+    box-shadow: inset 0px 0px 80px gray; } }
+.AVsubView {
+  display: none; }
 
 #wysihtml5-toolbar {
   padding: 16px 0px 16px 0px; }
@@ -50,7 +115,7 @@
 #imageCaption {
   margin-left: 10px; }
 
-.selected {
+.selected, .selectedTab {
   box-shadow: inset 0px 0px 8px #333333; }
 
 textarea {
@@ -60,3 +125,79 @@ textarea {
 #submitButton {
   background-color: #bfbfbf;
   padding: 8px 5px 8px 5px; }
+
+#updateButton {
+  background-color: #bfbfbf;
+  padding: 8px 5px 8px 5px;
+  display: none; }
+
+#resetButton {
+  background-color: #bfbfbf;
+  padding: 8px 5px 8px 5px; }
+
+.smallArticle {
+  text-align: center;
+  vertical-align: top;
+  width: 310px;
+  height: 400px; }
+
+.redBorder {
+  box-shadow: 0px 0px 10px 3px red;
+  border-color: red; }
+
+.redBorder:hover {
+  box-shadow: 0px 0px 10px 3px red;
+  border-color: red; }
+
+.articlePoster {
+  max-width: 300px;
+  margin-top: 5px; }
+
+.articleHeadline {
+  text-align: left;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  padding: 0px 15px 0px 15px; }
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+#tabSection {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  float: left;
+  padding-top: 20px;
+  background-color: #333;
+  box-sizing: border-box; }
+
+.tab {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.2em;
+  background-color: #d3d3d3;
+  border: 2px solid #a9a9a9;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  cursor: pointer; }
+
+.tab:hover {
+  background-color: #e3e3e3; }
+
+.selectedTab {
+  background-color: #808080; }
+
+.mainView {
+  display: none;
+  width: calc(100% - 250px);
+  float: right;
+  padding: 8px 10px 0px 8px;
+  box-sizing: border-box; }

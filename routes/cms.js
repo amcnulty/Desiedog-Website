@@ -45,7 +45,10 @@ router.get("/verifyUser", function(req, res) {
 });
 
 router.get('/my-portal', function(req, res) {
-    res.render('myPortal');
+    if (!req.session.user) {
+        return res.status(403).send();
+    }
+    else res.render('myPortal');
 });
 
 router.post('/publishArticle', function(req, res) {
@@ -54,6 +57,7 @@ router.post('/publishArticle', function(req, res) {
     var title = req.body.title;
     var pageTitle = req.body.pageTitle;
     var author = req.body.author;
+    var date = req.body.date;
     var articleBody = req.body.articleBody;
     var article = new Article();
     article.poster = poster;
@@ -61,6 +65,7 @@ router.post('/publishArticle', function(req, res) {
     article.title = title;
     article.pageTitle = pageTitle;
     article.author = author;
+    article.date = date;
     article.articleBody = articleBody;
     article.save(function(err, savedArticle) {
         if (err) {
@@ -70,6 +75,50 @@ router.post('/publishArticle', function(req, res) {
         return res.status(200).send();
     });
     return res.status(200).send();
+});
+
+router.put('/updateArticle', function(req, res) {
+    var poster = req.body.poster;
+    var headline = req.body.headline;
+    var title = req.body.title;
+    var pageTitle = req.body.pageTitle;
+    var author = req.body.author;
+    var articleBody = req.body.articleBody;
+    Article.findOne({ pageTitle: pageTitle}, function(err, article){
+        if (err) {
+            console.error(err);
+            return res.status(500).send();
+        }
+        else if (!article) {
+            return res.status(404).send();
+        }
+        article.poster = poster;
+        article.headline = headline;
+        article.title = title;
+        article.author = author;
+        article.articleBody = articleBody;
+        article.save(function(err, savedArticle) {
+            if (err) {
+                console.log(err);
+                return res.status(500).send();
+            }
+            return res.status(200).send();
+        });
+        return res.status(200).send();
+    })
+});
+
+router.delete('/deleteArticle', function(req, res) {
+    var articles = req.body.articles;
+    for (var i = 0; i < articles.length; i++) {
+        Article.findOneAndRemove({ pageTitle: articles[i]}, function(err) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send();
+            }
+            return res.status(200).send();
+        });
+    }
 });
 
 router.get('/articles', function(req, res) {

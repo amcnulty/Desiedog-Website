@@ -52,7 +52,7 @@ function load() {
                 hideDropDown();
             }, false);
             portalButton.addEventListener("click", function() {
-                window.location = "cms/my-portal";
+                window.location = "/cms/my-portal";
             }, false);
             logOutButton.addEventListener("click", logUserOut, false);
             // If user presses enter on forms it will send data

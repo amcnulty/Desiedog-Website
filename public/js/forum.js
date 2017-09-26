@@ -11,7 +11,7 @@ function load() {
 
     function loadArticles() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "cms/articles");
+        xhr.open("GET", "cms/articles", true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 articles = JSON.parse(xhr.responseText);
