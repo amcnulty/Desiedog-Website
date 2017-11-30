@@ -3,7 +3,7 @@ else if (window.addEventListener) {window.addEventListener('load', load, false);
 else {document.addEventListener('load', load, false);}
 function load() {
     // Loads template html partials into main document 
-    // and calls a funtion when loading is complete.
+    // and calls a function when loading is complete.
     function loadTemplates(templates, loadingComplete) {
         var count = 0;
         for (var i = 0; i < templates.length; i++) {
@@ -15,7 +15,7 @@ function load() {
             });
         }
     }
-    // This function will exicute when page is loaded.
+    // This function will execute when page is loaded.
     // Function will check for user and display the appropriate
     // information in the header.
     function checkForUser() {
@@ -24,11 +24,7 @@ function load() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 // There is a user present
-                loggedIn.style.display = "inline-block";
-                signIn.style.display = "none";
-                topBarUserName.innerHTML = xhr.responseText;
-                // Close pop up window in case it is open
-                closePopUpWindow();
+                showLoggedInView(xhr.responseText);
             }
             else if (xhr.status == 401) {
                 // There is no user present
@@ -38,10 +34,22 @@ function load() {
         }
         xhr.send(null);
     }
+    function showLoggedInView(responseText) {
+        var res = JSON.parse(responseText);
+        loggedIn.style.display = "inline-block";
+        signIn.style.display = "none";
+        topBarUserName.innerHTML = res.userName;
+        if (res.notifications > 0) {
+            topBarNotification.innerHTML = res.notifications;
+            topBarNotification.style.display = "block";
+        }
+        // Close pop up window in case it is open
+        closePopUpWindow();
+    }
     // Sets event listener for user section in header
     function setHeaderListeners() {
             signIn.addEventListener("click", function() {
-                shadder.className = "showPopUp";
+                shader.className = "showPopUp";
                 signInBox.className = "showSignInBox";
                 signInUsername.focus();
             }, false);
@@ -81,7 +89,7 @@ function load() {
         if (dropDownBox != null) dropDownBox.className = "";
     }
     function closePopUpWindow() {
-        shadder.className = "";
+        shader.className = "";
         signInBox.className = "";
     }
     function sanitizeSignInForm() {
@@ -130,7 +138,8 @@ function load() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 // Login successful
                 // topBarUserName.innerHTML = xhr.responseText;
-                checkForUser();
+                // checkForUser();
+                showLoggedInView(xhr.responseText);
             }
             else if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 404) {
                 // username not found in database
@@ -216,6 +225,7 @@ function load() {
     var signIn = null;
     var loggedIn = null;
     var topBarUserName = null;
+    var topBarNotification = null;
     // The drop down box once logged in
     var dropDownBox = null;
     var dashboardButton = null;
@@ -226,13 +236,13 @@ function load() {
     // List of views to be displayed by tab click
     var panels = [];
     var currentPanelIndex = null;
-    // The shadder element that show behind signin/register pop-up box
-    var shadder = document.createElement('div');
-    shadder.id = 'shadder';
-    shadder.setAttribute('data-include', '../templates/popUps/signIn.html');
-    // Add shadder element to document
-    document.body.appendChild(shadder);
-    // The sign in box inside the shadder wrapper
+    // The shader element that show behind signin/register pop-up box
+    var shader = document.createElement('div');
+    shader.id = 'shader';
+    shader.setAttribute('data-include', '../templates/popUps/signIn.html');
+    // Add shader element to document
+    document.body.appendChild(shader);
+    // The sign in box inside the shader wrapper
     var signInBox = null;
     // The sign in view
     var signInView = null;
@@ -271,6 +281,7 @@ function load() {
         signIn = document.getElementById("signIn");
         loggedIn = document.getElementById("loggedIn");
         topBarUserName = document.getElementById("topBarUserName");
+        topBarNotification = document.getElementById("topBarNotification");
         dropDownBox = document.getElementById("loggedInDropDown");
         dashboardButton = document.getElementById("dashboardButton");
         messagesButton = document.getElementById("messagesButton");

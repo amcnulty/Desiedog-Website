@@ -69,7 +69,7 @@ router.post('/login', function(req, res) {
         user.comparePassword(password, function(err, isMatch) {
             if (isMatch && isMatch == true) {
                 req.session.user = user;
-                return res.status(200).send(req.body.userName);
+                return res.status(200).send(req.session.user);
             }
             else {
                 return res.status(401).send();
@@ -100,7 +100,13 @@ router.get('/userPresent', function(req, res) {
     if (!req.session.user) {
         return res.status(401).send();
     }
-    return res.status(200).send(req.session.user.userName);
+    else {
+        User.findOne({ userNameLowercase: req.session.user.userNameLowercase}, function(err, user) {
+            if (err) return res.status(500).send();
+            req.session.user = user;
+            return res.status(200).send(req.session.user);
+        });
+    }
 });
 
 router.post('/register', function(req, res) {
@@ -117,7 +123,14 @@ router.post('/register', function(req, res) {
     newuser.email = "email";
     newuser.pets = [""];
     newuser.profileImgPath = "path/to/image";
-
+    newuser.notifications = 0;
+    var message = {
+        body: 'Test Body',
+        unread: true,
+        date: '11/29/2017',
+        sender: 'Pea Body'
+    };
+    newuser.messages = [message];
     newuser.save(function(err, savedUser) {
         if(err) {
             console.error(err);
